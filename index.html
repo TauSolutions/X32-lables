@@ -1,0 +1,111 @@
+<html>
+<head>
+  <link rel='stylesheet' type='text/css' href='style.css' />
+  <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+<div id="help" class="help noselect disabled">
+<div id="helpBox">
+  <center><h2>X32 Compact Label Maker</h2></center>
+  <div style="max-width: 600px;">
+<b>Help</b> --  This dialog...</br>
+<b>Print</b> -- Brings up the system print dialog</br>
+<b>Load File</b> -- Load an X32 Label file in JSON format</br>
+<b>Save File</b> -- Saves an X32 Label file in JSON format</br>
+<b>Create Group</b> -- Create a Label Group</br>
+<b>Delete Group</b> -- Delete a Label Group</br>
+<hr>
+<b>SelectedName</b> -- The name of the selected Group</br>
+<b>Group Size</b> -- The Outer cut size in mm of the button group</br>
+<b>Buttons - Rows</b> -- Number of rows/pairs of buttons</br>
+<b>Buttons - Size</b> -- The actual size of the buttons in mm</br>
+<b>Buttons - Spacing</b> -- Horizontal and Vertical Spacing in mm on Center of the Buttons</br>
+<b>Buttons - Border</b> -- The size of the button cutout border in mm</br>
+<b>Buttons - Border Color</b> -- Button Border color. Can be any valid CSS color.  Color name (ie red, white, black, blue, etc) or HEX (ie #ABCDEF, #000, etc) or RGB (ie rgb(255, 128, 64), rgb(0,0,0), etc)</br>
+<hr>
+<b>X32 Compact Label Sizes</b></br>
+<div style="display:flex; justify-content: space-around;">
+<ul>
+<b>Mute Groups</b>
+<li>Width: 54mm</li>
+<li>Height: 76mm</li>
+<li>Button Rows: 3</li>
+<li>Button Width: 12mm</li>
+<li>Button Height: 9mm</li>
+<li>Button Horizontal Spacing: 23mm</li>
+<li>Button Vertical Spacing: 20.5mm</li>
+<li>Border Width: 0.5mm</li>
+<li>Border Color: white</li>
+</ul>
+<ul>
+<b>Assigns</b>
+<li>Width: 54mm</li>
+<li>Height: 110mm</li>
+<li>Button Rows: 4</li>
+<li>Button Width: 12mm</li>
+<li>Button Height: 9mm</li>
+<li>Button Horizontal Spacing: 23mm</li>
+<li>Button Vertical Spacing: 20.333mm</li>
+<li>Border Width: 0.5mm</li>
+<li>Border Color: white</li>
+</ul>
+</div>
+<hr>
+<b>Usage:</b></br>
+Click Create to create a new Button Group.</br>
+Click the Button Group Title to change the text.</br>
+Click on any of the buttons to change their text.</br>
+Click on any Group to select it.</br>
+Group must be selected before it can be deleted.</br>
+This app auto saves the work into the browser cache and will load the next time the site is loaded.</br>
+Print will format remove the toolbox and format the buttons for proper printing.  
+  </div>
+</div>
+</div>
+<div id="menu">
+  <div id="toolboxTitle" class="title noselect">ToolBox</div>
+  <div class="button-text-row">
+    <div class="button-row">
+      <div id="menuHelp" class="button-left"></div>
+      <div id="menuPrint" class="button-right"></div>
+    </div>
+	<div class="text-row">
+	  <div class="text-left">Help</div>
+	  <div class="text-right">Print</div>
+	</div>
+  </div>
+  <div class="button-text-row">
+    <div class="button-row">
+      <div id="menuLoad" class="button-left"></div>
+      <div id="menuSave" class="button-right"></div>
+    </div>
+	<div class="text-row">
+	  <div class="text-left">Load File</div>
+	  <div class="text-right">Save File</div>
+	</div>
+  </div>
+  <div class="button-text-row">
+    <div class="button-row">
+      <div id="menuCreateGroup" class="button-left"></div>
+      <div id="menuDeleteGroup" class="button-right"></div>
+    </div>
+	<div class="text-row">
+	  <div class="text-left">Create Group</div>
+	  <div class="text-right">Delete Group</div>
+	</div>
+  </div>
+  <hr/>
+  <div id="selected" class="">
+    <div id="selectedName">SelectedName</div>
+	<div>Group Size:<input id="groupWidth" class="selectedInput" type="number">mm x <input id="groupHeight" class="selectedInput" type="number">mm</div>
+	<h2>Buttons:</h2>
+	<div>Rows:<input id="buttonRows" class="selectedInput" type="number"></div>
+	<div>Size:<input id="buttonWidth" class="selectedInput" type="number">mm x <input id="buttonHeight" class="selectedInput" type="number">mm</div>
+	<div>Spacing:<input id="hSpace" class="selectedInput" type="number">mm x <input id="vSpace" class="selectedInput" type="number">mm</div>
+	<div>Border:<input id="trimWidth" class="selectedInput" type="number" step="0.1">mm - Color<input id="trimColor" class="selectedInput"></div>
+	<div><input type="checkbox" id="viewButton" /> View: <input id="viewButtonWidth" class="selectedInput" type="number" step="0.1">mm x <input id="viewButtonHeight" class="selectedInput" type="number" step="0.1">mm</div>
+  </div>
+  <input type="file" id="fileInput" accept="*.json" style="opacity: 0;"/>
+</div>
+</body>
+</html>

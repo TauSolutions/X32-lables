@@ -1,0 +1,250 @@
+.help {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255,255,255,0.9);
+	z-index: 99999999;
+	overflow: hidden;
+	font-size: 11pt;
+	font-family: sans-serif;
+}
+
+#helpBox {
+	position: relative;
+	margin: auto;
+	max-width: 80%;
+	max-height: 80%;
+	padding: 1em;
+	background: gray;
+    box-shadow: 0 0 2em 0.5em black;
+	overflow: hidden;
+	border-radius: 1em;
+	font-size: 11pt;
+	font-family: sans-serif;
+	overflow-y: auto;
+}
+
+#menu {
+	position: fixed;
+    width: 18em;
+    background: gray;
+    box-shadow: 0px 0px 15px 5px grey;
+	z-index: 999999;
+	overflow: hidden;
+	border-radius: 1em;
+	display: inline-block;
+	font-size: 11pt;
+	font-family: sans-serif;
+	
+	--button-width: 3em;
+	--button-height: 2em;
+	--button-h-space: 8em;
+	--button-v-space: 4.5em;
+	--button-trim: 1px;
+	--button-trim-color: gray;
+}
+
+#menu > .title {
+	padding-top:1em;
+	margin-bottom: 1em;
+	height: 2em;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+	cursor: move
+}
+
+#menu .button-left, #menu .button-right {
+	border-radius: 0.3em;
+	background: linear-gradient(white, lightgray);
+}
+#menu .button-left:active, #menu .button-right:active {
+	background: linear-gradient(lightgray, white);
+}
+#menu .button-left:hover, #menu .button-right:hover {
+	border-color: black;
+}
+
+#menu .text-left, #menu .text-right {
+	color: black;
+}
+
+#selected {
+	padding: 0.5em;
+	overflow-y: auto;
+}
+
+#selectedName {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+#selected h2 {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 0;
+}
+
+.selectedInput {
+	font-family: "Lucida Console", Monaco, Courier, monospace;
+	width: 4em;
+	text-align: right;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+@media print {
+	#help {
+		display: none !important;
+	}
+	#menu {
+		display: none !important;
+	}
+	.button-left, .button-right, .button-view {
+		background: white !important;
+	}
+}
+
+#mute-group-123 {
+	--button-width: 12mm;
+	--button-height: 9mm;
+	--button-h-space: 23mm;
+	--button-v-space: 20.5mm;
+	--button-trim: 0.5mm;
+	--button-trim-color: white;
+	
+	height: 76mm;
+}
+
+#assigns-123 {
+	--button-width: 12mm;
+	--button-height: 9mm;
+	--button-h-space: 23mm;
+	--button-v-space: 20.333mm;
+	--button-trim: 0.5mm;
+	--button-trim-color: white;
+	
+	height: 110mm;
+}
+
+#mgb {
+	position: absolute;
+	top: 15mm;
+	left: calc(50% - (35mm / 2));
+	width: 35mm;
+	height: 50mm;
+	background: #999;
+}
+
+#ab {
+	position: absolute;
+	top: 15mm;
+	left: calc(50% - (35mm / 2));
+	width: 35mm;
+	height: 70mm;
+	background: #999;
+}
+
+.group {
+	overflow: hidden;
+	position: relative;
+	width: 54mm;
+	background: black;
+	border-radius: 5mm;
+	margin: 5mm;
+	display: inline-block;
+	font-size: 11pt;
+	font-family: sans-serif;
+}
+
+.group-title {
+	color: white;
+	margin-top:5mm;
+	height: 14.5mm;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+.button-text-row {
+	position: relative;
+	height: var(--button-v-space);
+	max-height: var(--button-v-space);
+}
+
+.button-row {
+	position: relative;
+	width: 100%;
+	height: calc((var(--button-height) / 2) + var(--button-trim));
+	margin: auto;
+}
+
+.button-left, .button-right {
+	position: absolute;
+	width: var(--button-width);
+	height: var(--button-height);
+	border: var(--button-trim) solid var(--button-trim-color);
+	border-radius: 1mm;
+	background: linear-gradient(white, lightgray);
+	top: calc((var(--button-height) / -2) - var(--button-trim));
+}
+.button-view {
+	position: absolute;
+	width: var(--button-view-width);
+	height: var(--button-view-height);
+	border: var(--button-trim) solid var(--button-trim-color);
+	border-radius: 1mm;
+	background: linear-gradient(white, lightgray);
+	bottom: calc(4mm - var(--button-trim));
+	right: calc(4mm - var(--button-trim));
+}
+
+.button-left:hover, .button-right:hover {
+	border-color: red;
+}
+.button-left:active, .button-right:active {
+	background: linear-gradient(lightgray, white);
+}
+.button-left {
+	left: calc(50% - (var(--button-h-space) / 2) - (var(--button-width) / 2) - var(--button-trim));
+}
+.button-right {
+	right: calc(50% - (var(--button-h-space) / 2) - (var(--button-width) / 2) - var(--button-trim));
+}
+
+.text-row {
+	position: relative;
+	top: 0.5mm;
+	overflow: hidden;
+	height: calc(100% - var(--button-height) - (2 * var(--button-trim)) - 1mm);
+	max-height: calc(100% - var(--button-height) - (2 * var(--button-trim)) - 1mm);
+}
+
+.text-left, .text-right {
+	position: absolute;
+	color: white;
+	width: calc(2 * ((var(--button-h-space) / 2) - 2mm));
+	max-width: calc(2 * ((var(--button-h-space) / 2) - 2mm));
+	text-align: center;
+	overflow: hidden;
+}
+.text-left {
+	right: calc(50% + 2mm);
+}
+.text-right {
+	left: calc(50% + 2mm);
+}
+
+.disabled {
+	display: none;
+}
